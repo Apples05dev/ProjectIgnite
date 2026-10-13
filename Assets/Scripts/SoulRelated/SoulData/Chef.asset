@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cabc22aa18a6b49bbc1cca1ea4404d, type: 3}
   m_Name: Chef
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
-  correctVessel: {fileID: 0}
+  correctVessel: {fileID: 223976544268214406, guid: f6df79353e9b9bd4a8aff31429fdc9f1, type: 3}
   startingHint: 
   secondHint: 
   thirdHint: 
