@@ -8,7 +8,7 @@ public class SoulSpawner : MonoBehaviour
     [SerializeField] private GameObject soul;
     internal GameObject activeSoul;
 
-  
+    internal bool anActiveSoulExists = false;
     private LogBookUI logBookUI;
 
     private void Start()
@@ -34,13 +34,17 @@ public class SoulSpawner : MonoBehaviour
         logBookUI.StartingHint(chosenSoul.hints[0]);
         activeSoul.GetComponent<SoulObject>().chosenSoul = chosenSoul;
         soulDataArray.RemoveAt(randomIndex);
+        anActiveSoulExists = true;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnSouls();
+            if (!anActiveSoulExists)
+            {
+                SpawnSouls();
+            }
         }
     }
 }
