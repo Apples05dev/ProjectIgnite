@@ -6,7 +6,15 @@ public class SoulSpawner : MonoBehaviour
 {
     [SerializeField] private List<SoulData> soulDataArray;
     [SerializeField] private GameObject soul;
+    internal GameObject activeSoul;
 
+  
+    private LogBookUI logBookUI;
+
+    private void Start()
+    {
+        logBookUI = GetComponent<LogBookUI>();
+    }
     void SpawnSouls()
     {
         if (soulDataArray.Count == 0)
@@ -19,11 +27,13 @@ public class SoulSpawner : MonoBehaviour
         int randomIndex = Random.Range(0, soulDataArray.Count);
 
         SoulData chosenSoul = soulDataArray[randomIndex];
-        soulDataArray.RemoveAt(randomIndex);
 
-      
-        GameObject spawnedSoul = Instantiate(soul, transform.position, Quaternion.identity);
-        spawnedSoul.GetComponent<SoulObject>().chosenSoul = chosenSoul;
+
+
+        activeSoul = Instantiate(soul, transform.position, Quaternion.identity);
+        logBookUI.StartingHint(chosenSoul.hints[0]);
+        activeSoul.GetComponent<SoulObject>().chosenSoul = chosenSoul;
+        soulDataArray.RemoveAt(randomIndex);
     }
 
     private void Update()

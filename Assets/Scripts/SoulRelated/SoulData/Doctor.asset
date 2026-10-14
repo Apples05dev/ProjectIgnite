@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Doctor
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 2456603534639228215, guid: 28feb59a3e51549498c401552596c316, type: 3}
-  startingHint: 
-  secondHint: 
-  thirdHint: 
+  hints:
+  - FUCK HES DEAD
+  - yippee
+  - roxianeeee

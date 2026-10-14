@@ -4,7 +4,7 @@ using UnityEngine;
 public class SoulData : ScriptableObject
 {
     [SerializeField] internal GameObject correctVessel;
-    [SerializeField] private string startingHint;
-    [SerializeField] private string secondHint;
-    [SerializeField] private string thirdHint;
+    [SerializeField] internal string[] hints;
+
+    
 }

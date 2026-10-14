@@ -10,7 +10,9 @@ public class SoulObject : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Vessel"))
         {
-           if (chosenSoul.correctVessel == collision.gameObject)
+            Debug.Log(chosenSoul.correctVessel);
+            Debug.Log(collision.gameObject);
+            if (chosenSoul.correctVessel.name == collision.gameObject.name)
            {
                 Debug.Log("Correct Vessel");
            }
