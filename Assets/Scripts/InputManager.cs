@@ -11,10 +11,16 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         _interactInput.action.performed += Interact;
+        _movementInput.action.Enable();
+        _interactInput.action.Enable();
+
     }
     private void OnDisable()
     {
         _interactInput.action.performed -= Interact;
+        _movementInput.action.Disable();
+                _interactInput.action.Disable();
+
     }
 
     private void FixedUpdate()

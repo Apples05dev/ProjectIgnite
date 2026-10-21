@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class SoulSpawner : MonoBehaviour
+public class SoulSpawner : InteractableObject
 {
     [SerializeField] private List<SoulData> soulDataArray;
     [SerializeField] private GameObject soul;
@@ -37,14 +37,25 @@ public class SoulSpawner : MonoBehaviour
         anActiveSoulExists = true;
     }
 
-    private void Update()
+    public override void Interact() 
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        base.Interact();
+        if (activeSoul != null)
         {
-            if (!anActiveSoulExists)
-            {
-                SpawnSouls();
-            }
+            anActiveSoulExists = true;
         }
+        else
+        {
+            anActiveSoulExists = false;
+        }
+        if (activeSoul == null && !anActiveSoulExists)
+        {
+            SpawnSouls();
+        }
+        else
+        {
+            Debug.Log("A soul is already active!");
+        }
+
     }
 }

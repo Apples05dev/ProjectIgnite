@@ -3,23 +3,17 @@ using UnityEngine;
 public class SoulObject : MonoBehaviour
 {
    [SerializeField] internal SoulData chosenSoul;
+   [SerializeField] private GameObject soulHolder;
 
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Awake()
     {
-        if(collision.gameObject.CompareTag("Vessel"))
-        {
-            Debug.Log(chosenSoul.correctVessel);
-            Debug.Log(collision.gameObject);
-            if (chosenSoul.correctVessel.name == collision.gameObject.name)
-           {
-                Debug.Log("Correct Vessel");
-           }
-           else
-           {
-                Debug.Log("Incorrect Vessel");
-            }
-        }
+        soulHolder = GameObject.FindGameObjectWithTag("SoulHolder");
+        gameObject.transform.parent = soulHolder.transform;
     }
+    private void Update()
+    {
+        transform.position = soulHolder.transform.position;
+    }
+
 }
