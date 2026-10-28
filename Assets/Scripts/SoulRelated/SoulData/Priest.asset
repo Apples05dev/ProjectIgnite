@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cabc22aa18a6b49bbc1cca1ea4404d, type: 3}
   m_Name: Priest
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
-  correctVessel: {fileID: 5762150037738740343, guid: d12d68ae6907e4c4a9abf15411d2adfb, type: 3}
-  hints:
-  - in the name of the father, I will touch you
-  - 'AHHHH '
-  - YAHHHHHHHHHHHHHH
+  correctVessel: {fileID: 779032453098236083, guid: d12d68ae6907e4c4a9abf15411d2adfb, type: 3}
+  hints: []
