@@ -1,4 +1,3 @@
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,25 +16,33 @@ public class HealthBarsManager : MonoBehaviour
     private AudioSource audioSource;
 
     private Coroutine alertCoroutine;
+    private TextMeshProUGUI alertText;
+
+    public static float humanityAmount { get; private set; } = 0;
 
     private string humanityGained =
-        "You have peered too far into the soul.\n" +
-        "Careful, lest thee gain their vanity, and lose thy purity.\n" +
-        "For when that heart is complete, so too, wlll you fall";
+    "You have gazed too deep.\n" +
+    "And lost some purity";
 
     private string healthLost =
-        "You have chosen the wrong vessel..\n" +
-        "The soul has rejected you, and your health has been diminished.\n" +
-        "Be careful, for if your health reaches zero, we will have no more need for you.";
+        "The vessel rejects you. Fool";
 
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        alertText = alert.GetComponentInChildren<TextMeshProUGUI>();
+
+        // Start fully hidden and disabled
+        SetAlertAlpha(0f);
+        alert.gameObject.SetActive(false);
+     
+
     }
 
     public void DecreaseHealth()
     {
+        Debug.Log("Health decreased");
         healthBarPrefab.value -= 1;
         ShowAlert(healthLost);
     }
@@ -43,14 +50,18 @@ public class HealthBarsManager : MonoBehaviour
     public void IncreaseHumanity()
     {
         humanityValue.fillAmount += 0.25f;
+        humanityAmount = humanityValue.fillAmount;
         ShowAlert(humanityGained);
+
     }
 
     public void ShowAlert(string message)
     {
-        audioSource.PlayOneShot(alertSound);
+        if (alertSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(alertSound);
+        }
 
-        // Stop any currently running alert animation
         if (alertCoroutine != null)
         {
             StopCoroutine(alertCoroutine);
@@ -61,51 +72,75 @@ public class HealthBarsManager : MonoBehaviour
 
     private IEnumerator ShowAlertRoutine(string message)
     {
-        CanvasGroup canvasGroup = alert.GetComponent<CanvasGroup>();
+        // Initialize at 0 alpha before turning on to prevent visual pops
+        SetAlertAlpha(0f);
+        alert.gameObject.SetActive(true);
 
-        
-        if (canvasGroup == null)
+        if (alertText != null)
         {
-            canvasGroup = alert.gameObject.AddComponent<CanvasGroup>();
+            alertText.text = message;
         }
 
-        
-        alert.gameObject.SetActive(true);
-        alert.GetComponentInChildren<TextMeshProUGUI>().text = message;
+        // Fade in: From transparent (0.0) up to half opacity (0.5)
+        yield return StartCoroutine(FadeAlert(0f, 0.5f));
 
-      
-        yield return StartCoroutine(Fade(canvasGroup, 0f, 1f));
-
-        
+        // Hold at half opacity
         yield return new WaitForSeconds(displayDuration);
 
-        
-        yield return StartCoroutine(Fade(canvasGroup, 1f, 0f));
+        // Fade out: From half opacity (0.5) back down to transparent (0.0)
+        yield return StartCoroutine(FadeAlert(0.5f, 0f));
 
+        // Disable immediately when fully transparent
         alert.gameObject.SetActive(false);
 
         alertCoroutine = null;
     }
 
-    private IEnumerator Fade(CanvasGroup canvasGroup, float startAlpha, float endAlpha)
+    private IEnumerator FadeAlert(float startAlpha, float endAlpha)
     {
         float elapsed = 0f;
 
-        canvasGroup.alpha = startAlpha;
+        Color imgColor = alert.color;
+        Color textColor = alertText != null ? alertText.color : Color.white;
 
         while (elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
+            float currentAlpha = Mathf.Lerp(startAlpha, endAlpha, Mathf.Clamp01(elapsed / fadeDuration));
 
-            canvasGroup.alpha = Mathf.Lerp(
-                startAlpha,
-                endAlpha,
-                Mathf.Clamp01(elapsed / fadeDuration)
-            );
+            imgColor.a = currentAlpha;
+            alert.color = imgColor;
+
+            if (alertText != null)
+            {
+                textColor.a = currentAlpha;
+                alertText.color = textColor;
+            }
 
             yield return null;
         }
 
-        canvasGroup.alpha = endAlpha;
+        // Snap precisely to target value at the end of the loop
+        imgColor.a = endAlpha;
+        alert.color = imgColor;
+        if (alertText != null)
+        {
+            textColor.a = endAlpha;
+            alertText.color = textColor;
+        }
+    }
+
+    private void SetAlertAlpha(float alpha)
+    {
+        Color imgColor = alert.color;
+        imgColor.a = alpha;
+        alert.color = imgColor;
+
+        if (alertText != null)
+        {
+            Color textColor = alertText.color;
+            textColor.a = alpha;
+            alertText.color = textColor;
+        }
     }
 }
