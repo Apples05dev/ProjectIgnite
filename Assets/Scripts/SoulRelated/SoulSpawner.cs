@@ -1,6 +1,8 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using NUnit.Framework;
+using System.Linq;
 
 public class SoulSpawner : InteractableObject
 {
@@ -8,12 +10,15 @@ public class SoulSpawner : InteractableObject
     [SerializeField] private GameObject soul;
     internal GameObject activeSoul;
 
+    private VesselSpawner vesselSpawner;
+    private bool existingSoul = false;
     internal bool anActiveSoulExists = false;
     private LogBookUI logBookUI;
 
     private void Start()
     {
         logBookUI = GetComponent<LogBookUI>();
+        vesselSpawner = GetComponentInChildren<VesselSpawner>();
     }
     void SpawnSouls()
     {
@@ -23,17 +28,28 @@ public class SoulSpawner : InteractableObject
             return;
         }
 
-        // Choose a random index
-        int randomIndex = Random.Range(0, soulDataArray.Count);
+        List<SoulData> validSouls = soulDataArray.Where(soulData =>
+            vesselSpawner.spawnedVessels.Any(vessel => vessel.name.Contains(soulData.correctVessel.name))
+        ).ToList();
 
-        SoulData chosenSoul = soulDataArray[randomIndex];
+        if (validSouls.Count == 0)
+        {
+            Debug.Log("No matching vessels found in the scene for the remaining souls!");
+            return;
+        }
 
+        // 2. Pick a random soul from ONLY the valid list
+        int randomIndex = Random.Range(0, validSouls.Count);
+        SoulData chosenSoul = validSouls[randomIndex];
 
-
+        // 3. Safe to spawn now
         activeSoul = Instantiate(soul, transform.position, Quaternion.identity);
-        logBookUI.StartingHint(chosenSoul.hints[0]);
         activeSoul.GetComponent<SoulObject>().chosenSoul = chosenSoul;
-        soulDataArray.RemoveAt(randomIndex);
+
+        logBookUI.StartingHint(chosenSoul.hints[0]);
+
+        // Remove it from your master tracking list so it isn't picked again
+        soulDataArray.Remove(chosenSoul);
         anActiveSoulExists = true;
     }
 

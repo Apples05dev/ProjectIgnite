@@ -10,9 +10,19 @@ public class InteractableObject : MonoBehaviour
        
     }
 
+    private void Start()
+    {
+       
+    }
+
     public void ToggleInteractMarker(bool toggle)
     {
-        if (_interactMarker != null)
+        if (_interactMarker != null) 
+        {
+            _interactMarker.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            _interactMarker.transform.localPosition = new Vector3(0, 3f, 0);
             _interactMarker.SetActive(toggle);
+        }
+             
     }
 }

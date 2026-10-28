@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 8348531885671303109}
   - component: {fileID: 3765224827634290900}
   - component: {fileID: 3667079439012902692}
-  - component: {fileID: 3409875933185272854}
+  - component: {fileID: 1765193717713932770}
   m_Layer: 0
   m_Name: Acrobat
   m_TagString: Untagged
@@ -121,8 +121,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.739, y: 0.835, z: -0.79682934}
-  m_LocalScale: {x: 0.053643454, y: 0.056104347, z: 0.22807}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8807705288727878598}
   m_Father: {fileID: 0}
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Vessels
   _interactMarker: {fileID: 6914624617341782841}
   soul: {fileID: 0}
---- !u!65 &3409875933185272854
+--- !u!65 &1765193717713932770
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,9 +242,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.050001, y: 11.41, z: 0.2}
+  m_Size: {x: 2.1099997, y: 4.3999996, z: 0.19999999}
   m_Center: {x: 0, y: 0, z: 0}

@@ -14,6 +14,7 @@ public class Vessels : InteractableObject
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
     
     public override void Interact() 
