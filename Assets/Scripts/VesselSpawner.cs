@@ -66,8 +66,9 @@ public class VesselSpawner : MonoBehaviour
         if (validPositionFound)
         {
             vesselArray.Remove(vessel);
-            Instantiate(vessel, randomSpawnPosition, floor.transform.rotation);
-            spawnedVessels.Add(vessel);
+            // FIX: Save the instance returned by Instantiate, not the prefab
+            GameObject spawnedInstance = Instantiate(vessel, randomSpawnPosition, floor.transform.rotation);
+            spawnedVessels.Add(spawnedInstance);
         }
 
     }

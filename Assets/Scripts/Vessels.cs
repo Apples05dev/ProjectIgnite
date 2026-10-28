@@ -4,6 +4,7 @@ public class Vessels : InteractableObject
 {
     [SerializeField] private GameObject soul;
     private GameObject player;
+    private HealthBarsManager healthBarsManager;
 
     private void OnDisable()
     {
@@ -14,6 +15,7 @@ public class Vessels : InteractableObject
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        healthBarsManager = FindAnyObjectByType<HealthBarsManager>();
 
     }
     
@@ -25,11 +27,13 @@ public class Vessels : InteractableObject
         {
             Debug.Log("Correct vessel!");
             Destroy(soul);
+
             gameObject.SetActive(false);
         }
         else
         {
             Debug.Log("Incorrect vessel!");
+            healthBarsManager.DecreaseHealth();
         }
 
     }

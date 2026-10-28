@@ -12,9 +12,15 @@ public class LogBookUI : MonoBehaviour
     private SoulSpawner soulSpawner;
     // Tracks whether the logbook is currently visible on screen
     private bool isOpened = false;
+    private HealthBarsManager healthBarsManager;
     void Start()
     {
         soulSpawner = GetComponent<SoulSpawner>();
+    }
+
+    private void Awake()
+    {
+        healthBarsManager = FindAnyObjectByType<HealthBarsManager>();
     }
 
 
@@ -82,6 +88,7 @@ public class LogBookUI : MonoBehaviour
         {
             if (soulDescription.text.Contains(soulSpawner.activeSoul.GetComponent<SoulObject>().chosenSoul.hints[i]))
             {
+                healthBarsManager.IncreaseHumanity();
                 continue;
             }
             else
