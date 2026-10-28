@@ -7,6 +7,7 @@ TagManager:
   - Vessel
   - SoulHolder
   - Soul
+  - GameManager
   layers:
   - Default
   - TransparentFX

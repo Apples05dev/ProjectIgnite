@@ -9,6 +9,8 @@ public class SoulSpawner : InteractableObject
     [SerializeField] private List<SoulData> soulDataArray;
     [SerializeField] private GameObject soul;
     internal GameObject activeSoul;
+    [SerializeField] private AudioClip soulGetSoundEffect;
+    private AudioSource audioSource;
 
     private VesselSpawner vesselSpawner;
     private bool existingSoul = false;
@@ -19,6 +21,7 @@ public class SoulSpawner : InteractableObject
     {
         logBookUI = GetComponent<LogBookUI>();
         vesselSpawner = GetComponentInChildren<VesselSpawner>();
+        audioSource = GetComponent<AudioSource>();
     }
     void SpawnSouls()
     {
@@ -66,6 +69,7 @@ public class SoulSpawner : InteractableObject
         }
         if (activeSoul == null && !anActiveSoulExists)
         {
+            audioSource.PlayOneShot(soulGetSoundEffect);
             SpawnSouls();
         }
         else

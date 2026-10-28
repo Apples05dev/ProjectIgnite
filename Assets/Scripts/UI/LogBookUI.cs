@@ -8,7 +8,8 @@ public class LogBookUI : MonoBehaviour
     public float slideDuration = 0.6f;
     [SerializeField] private TMPro.TextMeshProUGUI soulDescription;
     [SerializeField] public Image alertNotifcation;
-
+    [SerializeField] private AudioClip logBookOpenSound;
+    private AudioSource audioSource;
     private SoulSpawner soulSpawner;
     // Tracks whether the logbook is currently visible on screen
     private bool isOpened = false;
@@ -21,12 +22,14 @@ public class LogBookUI : MonoBehaviour
     private void Awake()
     {
         healthBarsManager = FindAnyObjectByType<HealthBarsManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
     #region bookPositioning
     public void ToggleLogBook()
     {
+        audioSource.PlayOneShot(logBookOpenSound);
         // Flip the state when the button is clicked
         isOpened = !isOpened;
         alertNotifcation.gameObject.SetActive(false);
@@ -83,12 +86,13 @@ public class LogBookUI : MonoBehaviour
 
     public void AddHint() 
     {
+        healthBarsManager.IncreaseHumanity();
         ShowAlertNotification();
       for (int i = 0; i < soulSpawner.activeSoul.GetComponent<SoulObject>().chosenSoul.hints.Length; i++)
         {
             if (soulDescription.text.Contains(soulSpawner.activeSoul.GetComponent<SoulObject>().chosenSoul.hints[i]))
             {
-                healthBarsManager.IncreaseHumanity();
+                
                 continue;
             }
             else
