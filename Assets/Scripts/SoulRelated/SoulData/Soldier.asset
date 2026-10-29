@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Soldier
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 7588809881104298749, guid: dda58fbb19c646245b7082e04f216e8f, type: 3}
-  hints: []
+  hints:
+  - 'I exist everywhere. Whether in humanity, nature, or the nature of humanity. '
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - 'Breakfast, work, dinner, sleep. Repeat. '
+  - 'The body gets tired, but that does not mean it gets to stop yet '

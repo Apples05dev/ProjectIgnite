@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Builder
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 3820267056832823753, guid: 8564dae6921ac1243bd033c57a120ada, type: 3}
-  hints: []
+  hints:
+  - I create the places you might walk in, walk on and walk to. However, not by my
+    design
+  - ' I was once who I was. Now I still am. And I always will be. '
+  - 'Breakfast, work, dinner, sleep. Repeat. '

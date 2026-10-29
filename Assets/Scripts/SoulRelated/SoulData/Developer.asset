@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Developer
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 8887854000658010482, guid: 35a5b79d77f38be499f624f3a86f9f50, type: 3}
-  hints: []
+  hints:
+  - 'I speak in languages to logically make complicated simplicities simple '
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell

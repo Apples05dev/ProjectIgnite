@@ -10,7 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10cabc22aa18a6b49bbc1cca1ea4404d, type: 3}
-  m_Name: chef
+  m_Name: Chef
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 5090925799785186922, guid: f6df79353e9b9bd4a8aff31429fdc9f1, type: 3}
-  hints: []
+  hints:
+  - 'My passion can be seen but cannot be preserved. This is part of every life from
+    the beginning to the very end, whether I am liquid or solid.  '
+  - I was once who I was. Now I still am. And I always will be.
+  - 'When everyone looked toward us, I spoke so they could work '
+  - 'Emotions are probably important, but not during work. '
+  - 'Breakfast, work, dinner, sleep. Repeat. '

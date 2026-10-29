@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Farmer
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 6525935537170850371, guid: cdc9b7ac7519f564cadffbf9f09341c0, type: 3}
-  hints: []
+  hints:
+  - 'I create and cultivate what is needed, so that I can keep creating. '
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - 'Breakfast, work, dinner, sleep. Repeat. '

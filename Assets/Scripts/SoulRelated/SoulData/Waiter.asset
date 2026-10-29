@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Waiter
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 4913181733487526823, guid: 7d99577f63e333c4f88aae89bbc7574d, type: 3}
-  hints: []
+  hints:
+  - I am helpful, but only to be helpful, for my purpose is to be helpful
+  - I was once who I was. Now I still am. And I always will be
+  - I was always helping. Or rather, I was always helpful

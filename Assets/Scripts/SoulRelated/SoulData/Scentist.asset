@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Scentist
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 5907940950565292822, guid: 1c74d4b870e61124a84046a31dd0c0fc, type: 3}
-  hints: []
+  hints:
+  - A little bit of this and a little bit of that
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - 'My mind is just a good recollection of pages in a book '

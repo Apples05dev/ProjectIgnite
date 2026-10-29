@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Influncere
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 6395889898669542882, guid: 4d7bdd20917f5024996df69df1fcd53d, type: 3}
-  hints: []
+  hints:
+  - 'You might know me, but you probably haven''t met me.  '
+  - 'What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell '
+  - I want to be seen, to be beautiful
+  - 'There will always be an audience, even when there isn''t '
+  - ' I can do anything I want, as long as I use my freedom well. '

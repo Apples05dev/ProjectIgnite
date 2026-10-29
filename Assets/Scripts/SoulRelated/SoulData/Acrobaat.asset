@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 7978347461057610958, guid: 687e34d2604209a418778c5ba87c638f, type: 3}
   hints:
-  - 
-  - 
-  - 
+  - ' I want to be seen, I want to be witnessed. '
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - 'There will always be an audience, even when there isn''t '
+  - 'Breakfast, work, dinner, sleep. Repeat. '
+  - 'The body gets tired, but that does not mean it gets to stop yet '

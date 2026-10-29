@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Chaffeur
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 5278502057664079253, guid: 126e5840b4102464285c9ad43641a6cf, type: 3}
-  hints: []
+  hints:
+  - 'Though it might take some time, I bring it '
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - 'I was always helping. Or rather, I was always helpful  '

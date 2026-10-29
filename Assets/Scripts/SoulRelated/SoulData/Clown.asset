@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Clown
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 7666176306927703599, guid: dd643ffe43332214b90cb431d37a31d3, type: 3}
-  hints: []
+  hints:
+  - Why did the chicken cross the road?
+  - 'What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell '
+  - 'There will always be an audience, even when there isn''t '

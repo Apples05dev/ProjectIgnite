@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Archteture
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 421704693054361021, guid: d5472ee785451a4468d5d1f218e4e8b6, type: 3}
-  hints: []
+  hints:
+  - 'I make sure others may live in their own world, their own box, with their own
+    things, within my design. '
+  - 'What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell '
+  - its not finished yet, yet this will be the general finish
+  - 'My mind is just a good recollection of pages in a book '

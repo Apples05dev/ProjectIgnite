@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Barista
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 1501776640407467763, guid: 5fce0d0aa4905ec42800722a5e16ecda, type: 3}
-  hints: []
+  hints:
+  - 'Every person has their own style. I give it a way to be seen '
+  - 'What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell '
+  - I want to be seen, to be beautiful

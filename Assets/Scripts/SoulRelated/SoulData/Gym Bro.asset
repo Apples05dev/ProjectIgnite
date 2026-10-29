@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Gym Bro
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 2262585999712941021, guid: d0e4a286c52ca5044b975b4b397e5a92, type: 3}
-  hints: []
+  hints:
+  - 'I am not simple to achieve. I require dedication and, above all, I require consistency '
+  - ' I was once who I was. Now I still am. And I always will be. '
+  - 'The body gets tired, but that does not mean it gets to stop yet '
+  - 'Breakfast, work, dinner, sleep. Repeat. '

@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Buisness Woman
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 3222297270457103512, guid: 57fce65606dba7940b773e7fe3af2881, type: 3}
-  hints: []
+  hints:
+  - 'I always take action, before others do '
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - ' Emotions are probably important, but not during work. '
+  - 'When everyone looked toward us, I spoke so they could work '
+  - 'My mind is just a good recollection of pages in a book '

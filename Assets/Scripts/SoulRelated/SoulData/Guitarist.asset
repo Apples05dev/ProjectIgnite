@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Guitarist
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 9066859063668109026, guid: 0278df21699124647bc42933f5e8db2d, type: 3}
-  hints: []
+  hints:
+  - ' I love to touch feelings. I express them by resonating with them '
+  - 'What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell '
+  - ' I can do anything I want, as long as I use my freedom well. '
+  - its not finished yet, yet this will be the general finish

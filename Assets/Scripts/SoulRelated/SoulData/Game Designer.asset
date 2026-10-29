@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Game Designer
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 1699826648901635685, guid: 6e5c2497f7ee83d4d9a9be95be6534c2, type: 3}
-  hints: []
+  hints:
+  - 'Life in another world, how would that be? '
+  - 'What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell '
+  - its not finished yet, yet this will be the general finish

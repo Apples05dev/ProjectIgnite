@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Painter
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 8699732518575761486, guid: 72a29f4341b686146bde46311c6fd3e9, type: 3}
-  hints: []
+  hints:
+  - 'Trying to define me is trying to define the edge of circles '
+  - What is Orange? A fruit perhaps. A word. A symbol. And, I suppose, a color aswell
+  - ' I can do anything I want, as long as I use my freedom well. '

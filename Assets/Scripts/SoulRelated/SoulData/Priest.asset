@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Priest
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 779032453098236083, guid: d12d68ae6907e4c4a9abf15411d2adfb, type: 3}
-  hints: []
+  hints:
+  - 'I am old, maybe ancient and come in many ways. Some good some bad. I am part
+    of everybody, even when I am ignored by some. My form can be materialized in
+    symbols and artistry. '
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - 'When everyone looked toward us, I spoke so they could work '
+  - 'I was always helping. Or rather, I was always helpful  '

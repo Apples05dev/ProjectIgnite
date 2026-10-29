@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Doctor
   m_EditorClassIdentifier: Assembly-CSharp::SoulData
   correctVessel: {fileID: 807984767409953667, guid: 28feb59a3e51549498c401552596c316, type: 3}
-  hints: []
+  hints:
+  - You never want to see me, and I do not want to see you either. Though when you
+    see me, you will be glad to be able to see longer.
+  - 'I was once who I was. Now I still am. And I always will be. '
+  - 'My mind is just a good recollection of pages in a book '
+  - 'I was always helping. Or rather, I was always helpful  '
