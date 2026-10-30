@@ -1,19 +1,30 @@
 using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class HealthBarsManager : MonoBehaviour
 {
     [SerializeField] private Slider healthBarPrefab;
-    [SerializeField] private Image humanityValue;
+    [SerializeField] internal Image humanityValue;
     [SerializeField] public Image alert;
 
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private float displayDuration = 3f;
 
     [SerializeField] private AudioClip alertSound;
+    [SerializeField] private AudioClip correctChoice;
+    [SerializeField] private AudioClip crying;
     private AudioSource audioSource;
+
+    internal bool hasBecomeHuman = false;
+    internal bool hasFailed = false;
+    internal bool hasWon = false;
+
+    [SerializeField] private TMPro.TextMeshProUGUI score;
+    private int scoreValue = 0;
 
     private Coroutine alertCoroutine;
     private TextMeshProUGUI alertText;
@@ -44,7 +55,14 @@ public class HealthBarsManager : MonoBehaviour
     {
         Debug.Log("Health decreased");
         healthBarPrefab.value -= 1;
-        ShowAlert(healthLost);
+        if (crying != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(crying);
+        }
+        if (healthBarPrefab.value <= 0)
+        {
+            hasFailed = true;
+        }
     }
 
     public void IncreaseHumanity()
@@ -52,7 +70,19 @@ public class HealthBarsManager : MonoBehaviour
         humanityValue.fillAmount += 0.25f;
         humanityAmount = humanityValue.fillAmount;
         ShowAlert(humanityGained);
+        if (humanityValue.fillAmount >= 1f)
+        {
+            hasBecomeHuman = true;
+        }
 
+    }
+
+    public void PlayCorrectChoiceSound()
+    {
+        if (correctChoice != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(correctChoice);
+        }
     }
 
     public void ShowAlert(string message)
@@ -129,7 +159,18 @@ public class HealthBarsManager : MonoBehaviour
             alertText.color = textColor;
         }
     }
-
+    public void UpdateScore()
+    {
+        scoreValue += 1;
+        if (score != null)
+        {
+            score.text = "Vessel's helped - " + scoreValue.ToString();
+        }
+        if (scoreValue >= 10) 
+        { 
+            hasWon = true;
+        }
+    }
     private void SetAlertAlpha(float alpha)
     {
         Color imgColor = alert.color;

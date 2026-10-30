@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AbelScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0ed83fd6c4ffea640b2787a6290d90b6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 310c022123ad9294da2d1014af3f439b
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 805a0162a085011429492b3fcd680059
+  - enabled: 1
+    path: Assets/Scenes/HumanEnding.unity
+    guid: 08ada2ade69d48e4181d512ff2c39d56
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: c3871c398389a04468db2739e78df5ce
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 32aa563ebe532ff41b10015f1dc2fc7b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

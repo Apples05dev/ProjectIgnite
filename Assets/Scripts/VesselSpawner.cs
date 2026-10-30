@@ -68,6 +68,7 @@ public class VesselSpawner : MonoBehaviour
             vesselArray.Remove(vessel);
             // FIX: Save the instance returned by Instantiate, not the prefab
             GameObject spawnedInstance = Instantiate(vessel, randomSpawnPosition, floor.transform.rotation);
+            spawnedInstance.name = vessel.name;
             spawnedVessels.Add(spawnedInstance);
         }
 
