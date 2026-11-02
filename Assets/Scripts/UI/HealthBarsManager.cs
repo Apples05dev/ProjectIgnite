@@ -32,11 +32,11 @@ public class HealthBarsManager : MonoBehaviour
     public static float humanityAmount { get; private set; } = 0;
 
     private string humanityGained =
-    "You have gazed too deep.\n" +
-    "And lost some purity";
+    "You have gazed too deep,\n" +
+    "and lost some purity.";
 
     private string healthLost =
-        "The vessel rejects you. Fool";
+        "The vessel rejects you. Fool.";
 
 
     private void Awake()
@@ -164,7 +164,7 @@ public class HealthBarsManager : MonoBehaviour
         scoreValue += 1;
         if (score != null)
         {
-            score.text = "Vessel's helped - " + scoreValue.ToString();
+            score.text = "Vessels helped - " + scoreValue.ToString();
         }
         if (scoreValue >= 10) 
         { 
