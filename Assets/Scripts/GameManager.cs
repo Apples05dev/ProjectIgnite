@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(delay);
             }
+            
+            healthBarsManager.resetEverything();
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }

@@ -184,4 +184,15 @@ public class HealthBarsManager : MonoBehaviour
             alertText.color = textColor;
         }
     }
+
+    public void resetEverything()
+    {
+        healthBarPrefab.value = 1;
+        humanityValue.fillAmount = 0;
+        humanityAmount = 0;
+        scoreValue = 0;
+        hasFailed = false;
+        hasBecomeHuman = false;
+        hasWon = false;
+    }
 }
